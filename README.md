@@ -7,14 +7,14 @@ flowchart TB
     call<-->rest
     subgraph server1
     rest--> kafkaMessage-prod-server1
-    KafkaMessage-receive-->MessageQueue
+    KafkaMessage-receive-server1-->MessageQueue
     MessageQueue --> rest
     end
     subgraph server2
-    kafkaMessage-prod-server1 --> receive
-    receive-->working 
+    kafkaMessage-prod-server1 --> KafkaMessage-receive-server2
+    KafkaMessage-receive-server2-->working 
     working --> kafkaMessage-prod-server2
-    kafkaMessage-prod-server2 --> KafkaMessage-receive
+    kafkaMessage-prod-server2 --> KafkaMessage-receive-server1
     end
 ```
 
