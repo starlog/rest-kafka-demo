@@ -1,0 +1,10 @@
+{
+  "type": "external",
+  "paths": [
+    "/simple"
+  ],
+  "methods": [
+    "GET"
+  ],
+  "regex_priority": 2
+}

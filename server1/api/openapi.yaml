@@ -1,0 +1,32 @@
+openapi: 3.0.2
+info:
+  title: Simple demo
+  version: 0.3.0
+servers:
+- url: https://apis.washswat.com
+paths:
+  /simple:
+    get:
+      tags:
+      - demo
+      summary: REST & Message Queue
+      description: sample app
+      operationId: demoRequest
+      responses:
+        "200":
+          description: 성공
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/demoResponse'
+      x-swagger-router-controller: Demo
+components:
+  schemas:
+    demoResponse:
+      properties:
+        result:
+          type: string
+          description: Result string
+      description: demo 호출의 응답
+      example:
+        result: result
